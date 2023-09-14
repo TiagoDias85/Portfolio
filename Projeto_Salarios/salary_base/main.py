@@ -14,12 +14,12 @@ while True:
     
     try:
         salario = float(input("Digite o salário: "))
-        horas_trabalhadas = float(input("Digite o total de horas trabalhadas: "))
+        horas_trabalhadas = float(input("Digite o total de horas Extra: "))
     
-        # Crie o objeto JuniorDeveloper com os dados fornecidos
+        # Cria o objeto JuniorDeveloper com os dados fornecidos
         novo_jun_dev = jun_dev(nome, salario, horas_trabalhadas)
     
-        # Adicione o objeto à lista
+        # Adiciona o objeto à lista
         lista_jun_devs.append(novo_jun_dev)
     except:
         print("Formato Inválido!")
