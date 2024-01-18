@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Cliente</title>
+</head>
+<body>
+    <h1>Detalhes do Cliente</h1>
+    <h2>Informações Pessoais</h2>
+    <p>Nome: {{ cliente[1] }}</p>
+    <p>Idade: {{ cliente[2] }}</p>
+    <p>Email: {{ cliente[3] }}</p>
+
+    <h2>Dados Pessoais</h2>
+    <p>Endereço: {{ dados_pessoais[1] if dados_pessoais else 'Não disponível' }}</p>
+    <p>Telefone: {{ dados_pessoais[2] if dados_pessoais else 'Não disponível' }}</p>
+
+    <h2>Compras</h2>
+    {% if compras %}
+        <ul>
+            {% for compra in compras %}
+                <li>{{ compra[3] }} - R$ {{ compra[4] }} - {{ compra[5] }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhuma compra registrada.</p>
+    {% endif %}
+
+    <h2>Ações</h2>
+    <a href="{{ url_for('editar_dados_pessoais', cliente_id=cliente[0]) }}">Editar Dados Pessoais</a>
+    <a href="{{ url_for('adicionar_compra', cliente_id=cliente[0]) }}">Adicionar Compra</a>
+    <a href="{{ url_for('remover_cliente', cliente_id=cliente[0]) }}" onclick="return confirm('Tem certeza que deseja remover o cliente?')">Remover Cliente</a>
+</body>
+</html>
