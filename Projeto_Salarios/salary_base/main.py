@@ -1,10 +1,10 @@
 from employee import Employee 
 from junior_developer import JuniorDeveloper as jun_dev
-from mid_level_developer import MidLevelDeveloper 
+from mid_level_developer import MidLevelDeveloper as mid
 from senior_developer import SeniorDeveloper 
 from lead_developer import LeadDeveloper 
 
-lista_jun_devs = [jun_dev("Tiago Dias", 1800, 10)]
+lista_jun_devs = [jun_dev("Tiago Dias", 1800, 10), mid("Gobblert", 1900, 12) ]
 
 while True:
     nome = input("Digite o nome do desenvolvedor (ou 'continuar' para Imprimir salários): ")
