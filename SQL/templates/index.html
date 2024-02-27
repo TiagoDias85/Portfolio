@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    <ul>
+        {% for cliente in clientes %}
+            <li>
+                {{ cliente[1] }} - {{ cliente[2] }} anos
+                (<a href="{{ url_for('detalhes_cliente', cliente_id=cliente[0]) }}">Detalhes</a>)
+                (<a href="{{ url_for('remover_cliente', cliente_id=cliente[0]) }}" onclick="return confirm('Tem certeza que deseja remover o cliente?')">Remover</a>)
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Adicionar Novo Cliente</h2>
+    <form action="/adicionar_cliente" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" required>
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+        <button type="submit">Adicionar Cliente</button>
+    </form>
+</body>
+</html>

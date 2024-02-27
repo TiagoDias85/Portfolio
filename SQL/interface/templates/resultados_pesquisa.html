@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Pesquisa</title>
+</head>
+<body>
+    <h1>Resultados da Pesquisa</h1>
+    {% if clientes %}
+        <ul>
+            {% for cliente in clientes %}
+                <li>
+                    {{ cliente[1] }} - {{ cliente[2] }} anos
+                    (<a href="{{ url_for('detalhes_cliente', cliente_id=cliente[0]) }}">Detalhes</a>)
+                    (<a href="{{ url_for('adicionar_compra', cliente_id=cliente[0]) }}">Adicionar Compra</a>)
+                    (<a href="{{ url_for('remover_cliente', cliente_id=cliente[0]) }}" onclick="return confirm('Tem certeza que deseja remover o cliente?')">Remover</a>)
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum cliente encontrado.</p>
+    {% endif %}
+</body>
+</html>
