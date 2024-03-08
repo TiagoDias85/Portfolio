@@ -25,6 +25,6 @@ Este notebook Jupyter utiliza a biblioteca Pandas para realizar uma análise exp
 Este projeto foi desenvolvido como exemplo de como gerar dados fictícios de vendas e realizar uma análise inicial desses dados. Os dados gerados são fictícios e não representam dados reais de vendas.
 
 ## Autor
-[Seu Nome]
+[Tiago Dias]
 
 Se houver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato.
